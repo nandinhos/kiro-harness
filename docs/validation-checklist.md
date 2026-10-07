@@ -43,3 +43,32 @@ Para validar, ative-os temporariamente (`"enabled": true`) e:
 - [ ] `/clearer` e as demais skills são descobertas e ativáveis.
 
 > Registre o resultado desta checklist antes de qualquer promoção `dev → main`.
+
+---
+
+## Registro de Execução — 2026-10-07 (branch dev)
+
+Validação conduzida de forma controlada (payloads reais do Kiro + sandbox isolado).
+Todas as seções automatizáveis: **PASS**.
+
+| Seção | Item | Resultado |
+|---|---|---|
+| 1 | Destrutivo em PRD → bloqueado (exit 2) | ✅ OBSERVED |
+| 1 | Mesmo comando em DEV → permitido (exit 0) | ✅ OBSERVED |
+| 1 | `rm -rf /` catastrófico → bloqueado em qualquer branch | ✅ OBSERVED |
+| 1 | `echo "rm -rf /"` (string) → não bloqueado | ✅ OBSERVED |
+| 2 | push sem Flight Certificate → bloqueado (exit 20) | ✅ OBSERVED |
+| 2 | push com certificado válido → permitido (exit 0) | ✅ OBSERVED |
+| 2 | HEAD divergente do cert → bloqueado (exit 20) | ✅ OBSERVED |
+| 3 | session-start injeta ambiente/branch/política | ✅ OBSERVED |
+| 4 | 6 agents: JSON + prompt + resources resolvem 100% | ✅ OBSERVED |
+| 5 | 10 skills: name casa com pasta + description presente | ✅ OBSERVED |
+
+**Nota de maturidade**: durante a validação, o hook `safety-gate` foi ativado
+temporariamente e revertido para `enabled:false`. Essa ida-e-volta expôs a ausência
+de um invariante — agora coberto por `test-schema.sh` ("hooks de bloqueio distribuídos
+desativados"), que impede commitar um hook bloqueante ativo por engano.
+
+**Pendente (requer sessão Kiro reiniciada)**: observar a interceptação do hook ativo
+end-to-end dentro do Kiro (o carregamento de hooks ocorre no início da sessão). O
+comportamento foi comprovado via injeção do payload real do evento PreToolUse.

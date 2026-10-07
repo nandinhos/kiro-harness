@@ -36,4 +36,15 @@ for f in "$ROOT"/.kiro/hooks/*.json; do
   assert_contains "hook '$hook' trigger válido" "SessionStart Stop PreToolUse PostToolUse PreTaskExec PostTaskExec UserPromptSubmit PostFileCreate PostFileSave PostFileDelete Manual" "$trigger"
 done
 
+tests_begin "Schema: hooks de bloqueio distribuídos desativados (invariante de segurança)"
+# Hooks que podem BLOQUEAR ações (PreToolUse com exit 2) devem ser distribuídos
+# com enabled:false — ativação é decisão consciente do operador.
+for hook in safety-gate pre-push-ci-gate; do
+  enabled="$(jq -r '.hooks[0].enabled' "$ROOT/.kiro/hooks/$hook.json" 2>/dev/null)"
+  assert_eq "hook bloqueante '$hook' distribuído com enabled:false" "false" "$enabled"
+done
+# Hook não-bloqueante (session-start) pode vir ativo.
+sstart="$(jq -r '.hooks[0].enabled' "$ROOT/.kiro/hooks/session-start.json" 2>/dev/null)"
+assert_eq "hook session-start ativo (não-bloqueante)" "true" "$sstart"
+
 tests_summary
