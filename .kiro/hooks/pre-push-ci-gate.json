@@ -1,0 +1,17 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "pre-push-ci-gate",
+      "description": "Zero-Tolerance Pipeline Red (ADR 004). Bloqueia git push em repositórios com CI ativa sem um Flight Certificate válido para o HEAD atual.",
+      "trigger": "PreToolUse",
+      "matcher": "execute_bash|executeBash|shell",
+      "action": {
+        "type": "command",
+        "command": "bash \"${KIRO_WORKSPACE_ROOT:-.}/scripts/hooks/pre-push-hook.sh\"",
+        "timeout": 10
+      },
+      "enabled": false
+    }
+  ]
+}

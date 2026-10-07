@@ -1,0 +1,11 @@
+{
+  "name": "architect",
+  "description": "Design de solução e análise de impacto a partir do Evidence Pack. Propõe o Implementation Plan com menor diff funcional. Não implementa código. Usar em tarefas HIGH antes da implementação.",
+  "prompt": "file://./prompts/architect.md",
+  "tools": ["read", "web"],
+  "resources": [
+    "file://.kiro/steering/00-clearer-protocol.md",
+    "file://.kiro/steering/04-ponytail-mode.md",
+    "file://.kiro/steering/05-coding-standards.md"
+  ]
+}

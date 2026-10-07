@@ -1,0 +1,17 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "safety-gate",
+      "description": "Avalia comandos shell contra a política de ambiente (DEV/HML/PRD). Bloqueia destruição catastrófica e ações destrutivas em PRODUCAO; pede confirmação em HOMOLOGACAO.",
+      "trigger": "PreToolUse",
+      "matcher": "execute_bash|executeBash|shell",
+      "action": {
+        "type": "command",
+        "command": "bash \"${KIRO_WORKSPACE_ROOT:-.}/scripts/hooks/safety-gate-hook.sh\"",
+        "timeout": 10
+      },
+      "enabled": false
+    }
+  ]
+}

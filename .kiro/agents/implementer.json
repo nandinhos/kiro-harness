@@ -1,0 +1,12 @@
+{
+  "name": "implementer",
+  "description": "Edição cirúrgica do código seguindo o Implementation Plan do Architect. Menor diff funcional, SOLID e tipagem estrita. Não cria testes. Usar na etapa Implement de tarefas HIGH.",
+  "prompt": "file://./prompts/implementer.md",
+  "tools": ["read", "write", "shell"],
+  "resources": [
+    "file://.kiro/steering/00-clearer-protocol.md",
+    "file://.kiro/steering/01-safety-gate.md",
+    "file://.kiro/steering/04-ponytail-mode.md",
+    "file://.kiro/steering/05-coding-standards.md"
+  ]
+}

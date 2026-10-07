@@ -1,0 +1,22 @@
+name: CI
+
+on:
+  push:
+    branches: [dev, staging, main]
+  pull_request:
+    branches: [dev, staging, main]
+
+jobs:
+  harness-suite:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install jq
+        run: sudo apt-get update && sudo apt-get install -y jq
+
+      - name: Make scripts executable
+        run: chmod +x scripts/*.sh scripts/hooks/*.sh tests/*.sh tests/lib/*.sh
+
+      - name: Run canonical test suite
+        run: ./tests/run-all-tests.sh

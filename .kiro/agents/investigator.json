@@ -1,0 +1,11 @@
+{
+  "name": "investigator",
+  "description": "Exploração read-only do codebase. Produz um Evidence Pack auditável (OBSERVED/INFERRED/UNKNOWN). Não edita arquivos. Usar na etapa Load Context de tarefas HIGH.",
+  "prompt": "file://./prompts/investigator.md",
+  "tools": ["read", "web"],
+  "resources": [
+    "file://.kiro/steering/00-clearer-protocol.md",
+    "file://.kiro/steering/02-evidence-semantics.md",
+    "file://.kiro/steering/04-ponytail-mode.md"
+  ]
+}

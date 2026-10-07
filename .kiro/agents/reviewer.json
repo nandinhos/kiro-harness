@@ -1,0 +1,10 @@
+{
+  "name": "reviewer",
+  "description": "Revisão adversarial de diff/PR. Verifica contratos, segurança, padrões e cobertura. Emite veredicto APROVADO/BLOQUEADO com evidência. Usar na etapa Review de tarefas HIGH.",
+  "prompt": "file://./prompts/reviewer.md",
+  "tools": ["read", "shell"],
+  "resources": [
+    "file://.kiro/steering/02-evidence-semantics.md",
+    "file://.kiro/steering/05-coding-standards.md"
+  ]
+}
