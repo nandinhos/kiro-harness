@@ -31,4 +31,4 @@ jobs:
         run: chmod +x scripts/*.sh scripts/hooks/*.sh tests/*.sh tests/lib/*.sh
 
       - name: Run canonical test suite (inclui lint shellcheck)
-        run: ./tests/run-all-tests.sh
+        run: ./tests/run-all-tests.sh --quiet
