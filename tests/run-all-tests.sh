@@ -7,6 +7,9 @@ HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SUITES=(
   "test-structure.sh"
   "test-schema.sh"
+  "test-detect-env.sh"
+  "test-agents-integrity.sh"
+  "test-hook-adapters.sh"
   "test-safety-gate.sh"
   "test-pre-push-gate.sh"
 )
