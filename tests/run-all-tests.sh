@@ -23,6 +23,7 @@ SUITES=(
   "test-detect-env.sh"
   "test-agents-integrity.sh"
   "test-hook-adapters.sh"
+  "test-hook-integration.sh"
   "test-safety-gate.sh"
   "test-pre-push-gate.sh"
   "test-shellcheck.sh"
