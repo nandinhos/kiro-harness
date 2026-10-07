@@ -12,6 +12,7 @@ SUITES=(
   "test-hook-adapters.sh"
   "test-safety-gate.sh"
   "test-pre-push-gate.sh"
+  "test-shellcheck.sh"
 )
 
 failed=0

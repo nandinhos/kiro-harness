@@ -1,9 +1,14 @@
 #!/usr/bin/env bash
 # test-safety-gate.sh — Testes adversariais do Safety Gate (núcleo + hook adaptador).
 # Cada caso injeta um comando candidato e verifica o veredicto/exit code esperado.
+#
+# shellcheck disable=SC2016
+# SC2016 é intencional: os payloads de teste usam `$R`, `${R}`, `$(...)` como
+# LITERAIS (sem expansão) — são exatamente as strings que o gate deve analisar.
 set -uo pipefail
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT="$(cd "$HERE/.." && pwd)"
+# shellcheck source=lib/assert.sh
 source "$HERE/lib/assert.sh"
 
 GATE="$ROOT/scripts/safety-gate.sh"

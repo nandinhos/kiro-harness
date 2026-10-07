@@ -3,6 +3,7 @@
 set -uo pipefail
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT="$(cd "$HERE/.." && pwd)"
+# shellcheck source=lib/assert.sh
 source "$HERE/lib/assert.sh"
 
 tests_begin "Schema: Skills front-matter (name + description)"

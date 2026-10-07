@@ -4,6 +4,7 @@
 set -uo pipefail
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT="$(cd "$HERE/.." && pwd)"
+# shellcheck source=lib/assert.sh
 source "$HERE/lib/assert.sh"
 
 export KIRO_WORKSPACE_ROOT="$ROOT"
