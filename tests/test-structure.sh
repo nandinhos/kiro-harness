@@ -11,8 +11,8 @@ for f in 00-clearer-protocol 01-safety-gate 02-evidence-semantics 03-risk-dial 0
   assert_file "steering/$f.md" "$ROOT/.kiro/steering/$f.md"
 done
 
-tests_begin "Estrutura: Skills (10)"
-for s in clearer clearer-feature clearer-bugfix clearer-refactor clearer-review clearer-audit clearer-adhd clearer-test clearer-map learned-lesson; do
+tests_begin "Estrutura: Skills (11)"
+for s in clearer clearer-feature clearer-bugfix clearer-refactor clearer-review clearer-audit clearer-council clearer-adhd clearer-test clearer-map learned-lesson; do
   assert_file "skills/$s/SKILL.md" "$ROOT/.kiro/skills/$s/SKILL.md"
 done
 
@@ -38,7 +38,7 @@ done
 tests_begin "Estrutura: Instalador, CI e ADRs"
 assert_file "install.sh" "$ROOT/install.sh"
 assert_file ".github/workflows/ci.yml" "$ROOT/.github/workflows/ci.yml"
-for adr in 003-system-one-epistemology 004-ci-governance-pre-push-gate 005-native-first-adaptation; do
+for adr in 003-system-one-epistemology 004-ci-governance-pre-push-gate 005-native-first-adaptation 006-multi-perspective-council; do
   assert_file "docs/adr/$adr.md" "$ROOT/docs/adr/$adr.md"
 done
 

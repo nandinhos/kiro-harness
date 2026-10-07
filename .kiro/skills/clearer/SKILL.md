@@ -46,6 +46,7 @@ Analise a intenção do desenvolvedor, avalie o nível de risco e despache para 
 | Mapeamento de codebase | `/clearer-map` | LOW |
 | Execução e verificação de testes | `/clearer-test` | MEDIUM |
 | Modo hiperfoco — 1 ação imediata | `/clearer-adhd` | LOW/MEDIUM |
+| Decisão de design com trade-offs mutuamente excludentes | `/clearer-council` | HIGH |
 | Registrar lição técnica aprendida | `/learned-lesson` | LOW |
 
 ---

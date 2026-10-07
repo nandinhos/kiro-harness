@@ -27,7 +27,7 @@ decidimos o que portar, adaptar e descartar.
 | Graphify (AST) | **DESCARTADO** | Ferramenta nativa `code` (tree-sitter + LSP) |
 | context-mode (SQLite) | **DESCARTADO** | Gestão de contexto é do Kiro |
 | Heartbeat 25s / monitor | **DESCARTADO** | Background process nativo do Kiro CLI |
-| Multi-Model Council | **ADIADO** | Depende de múltiplas CLIs externas |
+| Multi-Model Council | **PORTADO (conceito)** → skill `clearer-council` (ver ADR 006) | Padrão de deliberação via perspectivas nativas; app web/OpenRouter descartados |
 
 ## Consequências
 

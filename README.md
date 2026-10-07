@@ -36,7 +36,7 @@ kiro-harness/
 │   │   ├── 03-risk-dial.md             # O Risk Dial
 │   │   ├── 04-ponytail-mode.md         # Filosofia Ponytail Mode
 │   │   └── 05-coding-standards.md      # Padrões de Código
-│   ├── skills/                 # Skills ativadas por demanda (/skill) — 10 skills
+│   ├── skills/                 # Skills ativadas por demanda (/skill) — 11 skills
 │   ├── agents/                 # Subagentes especializados (custom agents JSON)
 │   │   ├── investigator.json           # Exploração read-only → Evidence Pack
 │   │   ├── architect.json              # Design de solução → Implementation Plan
@@ -114,6 +114,7 @@ Instale com o script dedicado:
 | `/clearer-refactor` | Refatoração cirúrgica | `Refatorar Z` |
 | `/clearer-review` | Revisão adversarial de diff/PR | `Revisar diff` |
 | `/clearer-audit` | Auditoria de claims e conclusões | `Auditar claims` |
+| `/clearer-council` | Deliberação multi-perspectiva para decisões com trade-offs | `Decidir X ou Y` |
 | `/clearer-adhd` | Modo hiperfoco — 1 ação imediata, zero preâmbulos | Alta densidade |
 | `/clearer-test` | Execução e verificação determinística de testes | `Rodar testes` |
 | `/clearer-map` | Mapeamento de codebase e descoberta técnica | `Mapear projeto` |
