@@ -31,7 +31,7 @@ Localização: `~/.kiro/skills/`
 |---|---|
 | `clearer` | Dispatcher — analisa e roteia qualquer tarefa |
 | `clearer-feature` | Nova feature (8 passos, Response Contract) |
-| `clearer-bugfix` | 5 Gates Bloqueantes (Red → Green) |
+| `clearer-bugfix` | 5 Gates Bloqueantes (Red → Green) + lição embutida |
 | `clearer-refactor` | Refatoração cirúrgica com snapshot antes/depois |
 | `clearer-review` | Revisão adversarial com checklist completo |
 | `clearer-audit` | Auditoria de claims SUPPORTED/UNSUPPORTED |

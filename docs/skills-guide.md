@@ -51,11 +51,13 @@ No Kiro CLI, use o prefixo `/skill` ou o nome da skill diretamente:
 
 **Risk Dial**: MEDIUM/HIGH
 
+**Versão**: Systematic Debugging Engine v3.0
+
 **Fluxo**: 5 Gates Bloqueantes (TRIAGE → REPRODUCE → ISOLATE → ROOT CAUSE → FIX & HARDEN)
 
 **Quando usar**: Qualquer bug com comportamento incorreto comprovado.
 
-**Diferencial**: Exige teste vermelho (Red) **antes** de qualquer fix. Sem teste reproduzindo o bug, sem avanço.
+**Diferencial**: Exige teste vermelho (Red) **antes** de qualquer fix. Sem teste reproduzindo o bug, sem avanço. Inclui Toolbox de isolamento (bisect/binary search/tracing), causa raiz por 5 Porques + Ishikawa e **lição aprendida embutida** no Debug Report, com persistência opcional via `/learned-lesson`.
 
 ---
 
@@ -88,6 +90,24 @@ No Kiro CLI, use o prefixo `/skill` ou o nome da skill diretamente:
 **Quando usar**: Para verificar se afirmações técnicas são sustentadas por evidências reais.
 
 **O que entrega**: Classificação SUPPORTED/PARTIALLY_SUPPORTED/UNSUPPORTED para cada claim.
+
+---
+
+## `/clearer-council` — Deliberação Multi-Perspectiva
+
+**Risk Dial**: HIGH
+
+**Fluxo**: Opiniões independentes (3 perspectivas) → Review cruzado anônimo → Síntese do Chairman
+
+**Quando usar**: Decisão de design/arquitetura/adoção com trade-offs reais e caminhos
+mutuamente excludentes ("X ou Y?", "vale adotar Z?"). **Não** para revisar diff
+(`clearer-review`) nem auditar claims (`clearer-audit`).
+
+**O que entrega**: Veredicto com consenso, divergências, recomendação fundamentada, riscos
+assumidos e condições de reversão.
+
+**Limitação**: no Kiro, as perspectivas são o mesmo modelo em papéis distintos (diversidade
+de perspectiva, não de provedor). Ver ADR 006.
 
 ---
 

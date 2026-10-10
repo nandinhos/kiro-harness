@@ -1,0 +1,16 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "session-start-env",
+      "description": "Detecta e injeta o ambiente de execução (DEV/HML/PRD), branch e política de Safety Gate no contexto, no início de cada sessão.",
+      "trigger": "SessionStart",
+      "action": {
+        "type": "command",
+        "command": "bash \"${KIRO_WORKSPACE_ROOT:-.}/scripts/hooks/session-start-hook.sh\"",
+        "timeout": 10
+      },
+      "enabled": true
+    }
+  ]
+}

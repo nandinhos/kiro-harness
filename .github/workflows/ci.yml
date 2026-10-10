@@ -1,0 +1,34 @@
+name: CI
+
+on:
+  push:
+    branches: [dev, staging, main]
+    paths-ignore: ['**/*.md', 'docs/**', 'LICENSE']
+  pull_request:
+    branches: [dev, staging, main]
+    paths-ignore: ['**/*.md', 'docs/**', 'LICENSE']
+
+# Cancela runs antigos da mesma ref quando um novo push chega.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  harness-suite:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # jq e shellcheck já vêm pré-instalados no runner ubuntu-latest.
+      # Verifica presença em vez de instalar (evita apt-get, o gargalo da CI).
+      - name: Verify toolchain
+        run: |
+          command -v jq >/dev/null || { echo "jq ausente"; exit 1; }
+          command -v shellcheck >/dev/null || { echo "shellcheck ausente"; exit 1; }
+          jq --version && shellcheck --version | head -2
+
+      - name: Make scripts executable
+        run: chmod +x scripts/*.sh scripts/hooks/*.sh tests/*.sh tests/lib/*.sh
+
+      - name: Run canonical test suite (inclui lint shellcheck)
+        run: ./tests/run-all-tests.sh --quiet

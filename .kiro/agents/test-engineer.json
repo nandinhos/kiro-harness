@@ -1,0 +1,10 @@
+{
+  "name": "test-engineer",
+  "description": "Execução de testes determinísticos com captura de exit code e output bruto. Cria testes de regressão. Zero Fake Pass. Usar na etapa Test de tarefas HIGH.",
+  "prompt": "file://./prompts/test-engineer.md",
+  "tools": ["read", "write", "shell"],
+  "resources": [
+    "file://.kiro/steering/02-evidence-semantics.md",
+    "file://.kiro/steering/05-coding-standards.md"
+  ]
+}

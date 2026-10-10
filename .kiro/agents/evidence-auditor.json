@@ -1,0 +1,9 @@
+{
+  "name": "evidence-auditor",
+  "description": "Confronto final CLAIM x EVIDENCE. Classifica cada claim como SUPPORTED/PARTIALLY_SUPPORTED/UNSUPPORTED. Emite o relatório de auditoria final. Usar na etapa Audit de tarefas HIGH.",
+  "prompt": "file://./prompts/evidence-auditor.md",
+  "tools": ["read"],
+  "resources": [
+    "file://.kiro/steering/02-evidence-semantics.md"
+  ]
+}

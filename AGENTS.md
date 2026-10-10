@@ -75,7 +75,7 @@ Use o comando `/skill` para ativar:
 |---|---|
 | `/clearer` | Dispatcher — analisa e roteia qualquer tarefa |
 | `/clearer-feature` | Implementar feature ou melhoria |
-| `/clearer-bugfix` | Diagnosticar e corrigir bug (5 gates) |
+| `/clearer-bugfix` | Diagnosticar e corrigir bug (5 gates + lição embutida) |
 | `/clearer-refactor` | Refatoração cirúrgica |
 | `/clearer-review` | Revisão adversarial de diff/PR |
 | `/clearer-audit` | Auditoria de claims e conclusões |

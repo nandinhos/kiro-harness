@@ -1,0 +1,6 @@
+# Flight Certificate — artefato local do Pre-Push Gate, ancorado ao commit da máquina
+.kiro/.ceh/
+
+# Temporários
+*.tmp
+*.log

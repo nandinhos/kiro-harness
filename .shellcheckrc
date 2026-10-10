@@ -1,0 +1,4 @@
+# Configuração do ShellCheck para o Kiro Harness.
+# SC1091: "não seguiu o arquivo incluído" — informativo, não é bug. Os source
+# são resolvidos em runtime via $HERE; o -x em CI segue quando possível.
+disable=SC1091
