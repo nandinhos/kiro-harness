@@ -51,11 +51,13 @@ No Kiro CLI, use o prefixo `/skill` ou o nome da skill diretamente:
 
 **Risk Dial**: MEDIUM/HIGH
 
+**Versão**: Systematic Debugging Engine v3.0
+
 **Fluxo**: 5 Gates Bloqueantes (TRIAGE → REPRODUCE → ISOLATE → ROOT CAUSE → FIX & HARDEN)
 
 **Quando usar**: Qualquer bug com comportamento incorreto comprovado.
 
-**Diferencial**: Exige teste vermelho (Red) **antes** de qualquer fix. Sem teste reproduzindo o bug, sem avanço.
+**Diferencial**: Exige teste vermelho (Red) **antes** de qualquer fix. Sem teste reproduzindo o bug, sem avanço. Inclui Toolbox de isolamento (bisect/binary search/tracing), causa raiz por 5 Porques + Ishikawa e **lição aprendida embutida** no Debug Report, com persistência opcional via `/learned-lesson`.
 
 ---
 

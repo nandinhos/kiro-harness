@@ -56,18 +56,28 @@ kiro-harness/
 │   ├── test-runner.sh                  # Suíte + assinatura do certificado
 │   ├── setup-branches.sh               # Topologia Clássica/Enterprise
 │   └── hooks/                          # Adaptadores dos hooks (STDIN → exit code)
-├── tests/                      # Suíte de testes determinística (106 asserções)
+├── tests/                      # Suíte de testes determinística (252 asserções, 10 suítes)
 │   ├── run-all-tests.sh                # Orquestrador — exit 0 = tudo verde
 │   ├── test-structure.sh               # Presença de artefatos
 │   ├── test-schema.sh                  # Schema de skills/agents/hooks
+│   ├── test-detect-env.sh              # Detector de ambiente DEV/HML/PRD
+│   ├── test-agents-integrity.sh        # Integridade dos agentes (prompts/resources/tools)
+│   ├── test-hook-adapters.sh           # Adaptadores STDIN → exit code
+│   ├── test-hook-integration.sh        # Integração de payloads do hook
 │   ├── test-safety-gate.sh             # Adversarial do Safety Gate
 │   ├── test-pre-push-gate.sh           # Pre-Push Gate em sandbox
+│   ├── test-shellcheck.sh              # Lint estático dos scripts
+│   ├── test-meta.sh                    # Meta-teste (mutação) da lib de asserção
 │   └── lib/assert.sh                   # Mini-lib de asserção
 ├── .github/workflows/ci.yml    # CI — roda a suíte canônica
 ├── install.sh                  # Instalador (global ou por projeto)
 ├── AGENTS.md                   # Regras do harness para agentes
 └── docs/
-    ├── adr/                    # Architecture Decision Records (003, 004, 005)
+    ├── adr/                    # Architecture Decision Records (003–006)
+    │   ├── 003-system-one-epistemology.md
+    │   ├── 004-ci-governance-pre-push-gate.md
+    │   ├── 005-native-first-adaptation.md
+    │   └── 006-multi-perspective-council.md
     ├── clearer-protocol.md     # Guia completo do Protocolo CLEARER
     ├── safety-gate.md          # Guia do Safety Gate
     ├── evidence-semantics.md   # Semântica de Evidências
@@ -110,7 +120,7 @@ Instale com o script dedicado:
 |---|---|---|
 | `/clearer` | Dispatcher principal — analisa e roteia a tarefa | Ponto de entrada geral |
 | `/clearer-feature` | Nova feature ou melhoria | `Implementar X` |
-| `/clearer-bugfix` | Diagnóstico e correção de bug (5 gates) | `Bug: Y` |
+| `/clearer-bugfix` | Diagnóstico e correção de bug (5 gates + lição embutida) | `Bug: Y` |
 | `/clearer-refactor` | Refatoração cirúrgica | `Refatorar Z` |
 | `/clearer-review` | Revisão adversarial de diff/PR | `Revisar diff` |
 | `/clearer-audit` | Auditoria de claims e conclusões | `Auditar claims` |
